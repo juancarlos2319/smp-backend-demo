@@ -205,3 +205,5 @@ Todas las respuestas usan `{ success, message, data, count }`. Las reglas de neg
 - El PDF de la CLABE se guarda en la base (`fup_clabe_pdf`); no hay endpoint para descargarlo.
 - No hay lógica de nómina: procesar en Pagos solo ocupa las plazas y activa al empleado.
 - La clave de firma del JWT y las contraseñas de ejemplo son solo para desarrollo.
+#   s m p - b a c k e n d - d e m o  
+ 
