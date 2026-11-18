@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/smp_demo}
+    username: ${DB_USER:smp_demo}
+    password: ${DB_PASSWORD:}
+  flyway:
+    enabled: true
+  servlet:
+    multipart:
+      # El PDF de la CLABE: el front valida 5 MB; un poco más para el JSON de `datos`
+      max-file-size: 5MB
+      max-request-size: 6MB
+
+demo:
+  seed:
+    # Contraseña inicial de los usuarios de las migraciones (demo, capturista, autorizador, informatica, nuevo)
+    password: Demo123!
+  security:
+    jwt-secret: smp-demo-only-signing-key-change-before-use-2026
+    token-lifetime: 8h
+  cors:
+    allowed-origin: http://localhost:4200
+  mail:
+    # Vacío: código aleatorio. Se escribe en el log del backend porque el demo no envía correos.
+    codigo-fijo: ${DEMO_CODIGO_FIJO:}
+  front:
+    recuperacion-url: http://localhost:4200/recuperar
